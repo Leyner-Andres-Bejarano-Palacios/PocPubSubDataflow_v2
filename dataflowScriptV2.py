@@ -53,7 +53,7 @@ class WriteToGCS(DoFn):
 def run(input_topic, output_path, window_size=1.0, num_shards=5, pipeline_args=None):
     # Set `save_main_session` to True so DoFns can access globally imported modules.
     pipeline_options = PipelineOptions(
-        pipeline_args, streaming=True, save_main_session=True
+        pipeline_args, streaming=True, save_main_session=True,service_account_email='684034867805-compute@developer.gserviceaccount.com',
     )
     with Pipeline(options=pipeline_options) as pipeline:
         (
