@@ -81,10 +81,6 @@ if __name__ == "__main__":
         help="Output file's window size in minutes.",
     )
     parser.add_argument(
-        "--output_path",
-        help="Path of the output GCS file including the prefix.",
-    )
-    parser.add_argument(
         "--num_shards",
         type=int,
         default=5,
@@ -93,7 +89,6 @@ if __name__ == "__main__":
     known_args, pipeline_args = parser.parse_known_args()
     run(
         known_args.input_topic,
-        known_args.output_path,
         known_args.window_size,
         known_args.num_shards,
         pipeline_args,
